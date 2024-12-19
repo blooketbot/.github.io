@@ -66,8 +66,20 @@
         <div class="input-container">
             <label for="lobby-code">Enter Blooket Lobby Code:</label>
             <input type="text" id="lobby-code" placeholder="Enter Code Here" />
+            <button onclick="joinLobby()">Join Lobby</button>
         </div>
     </div>
+
+    <script>
+        function joinLobby() {
+            const code = document.getElementById("lobby-code").value.trim();
+            if (code) {
+                // Redirect to the Blooket lobby URL with the entered code
+                window.location.href = `https://play.blooket.com/game?code=${code}`;
+            } else {
+                alert("Please enter a valid Blooket code.");
+            }
+        }
+    </script>
 </body>
 </html>
-
